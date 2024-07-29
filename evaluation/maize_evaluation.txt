@@ -1,0 +1,24 @@
+9_maize_control_plant1_D08  Sequence Tracking Result:
+total_instance=33
+true_matchI=33
+true_matchII=33
+id switch =0
+--------------------------------
+18_maize_control_plant2_D08  Sequence Tracking Result:
+total_instance=41
+true_matchI=41
+true_matchII=41
+id switch =0
+--------------------------------
+26_maize_control_plant3_D08  Sequence Tracking Result:
+total_instance=28
+true_matchI=28
+true_matchII=28
+id switch =0
+----------Tracking End----------
+total_instance=102
+true_matchI=102
+AccuracyI =1.000000
+true_matchII=102
+AccuracyII =1.000000
+id switch =0
