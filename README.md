@@ -13,8 +13,9 @@ Inspired by the phenomenon in which a human naturally compares two similar three
 
 In an experiment involving maize species, the long-term and short-term tracking accuracies of TrackPlant3D both reached 100%. For sorghum, tobacco and tomato crops, the long-term tracking accuracies were 81.25%, 64.13% and 86.75%, respectively, and the short-term tracking accuracies were all greater than 85.00%, demonstrating satisfactory tracking performance. Moreover, TrackPlant3D is also robust against frequent organ growth events and adaptable to different types of segmentation inputs as well as to inputs involving inclination and rotation disturbances. We also demonstrated that the TrackPlant3D framework has the potential for incorporation into a fully automatic dynamic phenotyping pipeline that integrates organ segmentation, organ tracking, and dynamic monitoring of phenotypic traits such as individual leaf length and leaf area. This study may contribute to the development of dynamic phenotyping, digital agriculture, and the factory production of plants.
 
-<h3 style="text-align:center; font-style:italic;">Overall TrackPlant3D framework for tracking organ growth in time-series plant point clouds.<br>The framework includes three main steps—Step 1, point cloud processing; Step 2, estimating organ correspondences; and Step 3, growth tracking
-<img src="img/TrackPlant3D.jpg" alt="TrackPlant3D" width="100%"></h3>
+
+***<p align="center">>Overall TrackPlant3D framework for tracking organ growth in time-series plant point clouds.<br>The framework includes three main steps—Step 1, point cloud processing; Step 2, estimating organ correspondences; and Step 3, growth tracking***<br><br>
+<img src="img/TrackPlant3D.jpg" width="100%" height="50%"><br><br>
 
 ## Quick Start
 The project contains five folders.<br>
