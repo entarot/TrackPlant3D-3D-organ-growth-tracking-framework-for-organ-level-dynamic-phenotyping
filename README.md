@@ -45,10 +45,10 @@ Downsampling the point cloud can reduce the computational burden and the time co
 The Coherent Point Drift (CPD) [2], a non-rigid registration method, is used to align two point clouds of the same plant from two adjacent moments.<br> 
 - The input of registration is the downsampled data saved in folder `./data/sampled_data`. 
 - The output of registration will appear in folder `./data/registration_result` after running the Registration
-- File `fish_deformable_3D_lowrank_my.py` takes the point cloud at time ***t-1*** and the point cloud at time ***t*** as dual inputs and returns the transformed point cloud at time ***t***.
+- File `fish_deformable_3D_lowrank_my.py` takes the point cloud at time ***t-1*** and the point cloud at time ***t*** as dual inputs and returns the transformed point cloud at time ***t***. The CPD algorithm deformed the point cloud at time ***t*** to match the shape of the point cloud at time ***t-1***.
 
 ### Tracking 
-Organ tracking algorithm obtains organ correspondences through bipartite matching. <br>
+Our organ tracking algorithm obtains organ correspondences through Minimum Weighted Perfect Matching (MWPM) on an extended cost matrix for matching organs from two adjacent moments. <br>
 - The input of tracking is registration results at time ***t*** in folder `./data/registration_result` and the downsampled point cloud at time ***t-1*** in folder `./data/sampled_data`. 
 - The output are point clouds whose labels are upsampled to propagate to the original point clouds will be saved in `./data/tracking_result`.
 - File `organ_matching.py` estimates the organ correspondences between point cloud at time ***t-1*** and point cloud at time ***t***.
