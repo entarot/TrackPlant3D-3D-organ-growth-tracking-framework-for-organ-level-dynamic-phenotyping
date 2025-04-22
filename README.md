@@ -34,13 +34,13 @@ Folder __[tracking]__ contains code for tracking plant organs.<br>
 Folder __[evaluation]__ contains code for calculating the evaluation metrics of plant organ tracking results.<br>
 
 ### Downsampling  
-Downsampling the point cloud can reduce the computational burden and the time cost for registration.In downsampling process, 3D Edge‑Preserving Sampling (3DEPS) is used to downsample the point cloud.
-- File `001Batch separation of edges and centers of point clouds(c++).cpp` is used to separate original point clouds into point clouds containing only edge points and point clouds containing only non-edge points (in batches), respectively.
-- File `002Merge edge and non-edge parts by assigned number.py` uses FPS to randomly sample 4096 points from the edge part and sample 4096 points from the non-edge part, and combine the two parts into a new point cloud with 4096+4096 points.
-- File `003Composite point clouds proportionally and data augmentation.py` uses FPS to sample 256*(ratio) points from the edge part and to sample 256*(1-ratio) points from the non-edge part, then merges the two parts into a new single point cloud with 256 points. Finally, normalize the downsampled point cloud. Data augmentation is not required in our experiments.
+Downsampling the point cloud can reduce the computational burden and the time cost for registration.In downsampling process, 3D Edge‑Preserving Sampling (3DEPS) [1] is used to downsample the point cloud.
+- File `001Batch separation of edges and centers of point clouds(c++).cpp` is used to separate original plant point clouds into point clouds containing only edge points and point clouds containing only non-edge points (in batches), respectively.
+- File `002Merge edge and non-edge parts by assigned number.py` uses FPS to randomly sample 4096 points from both the edge part and the non-edge part, and combine the two parts into a new point cloud with 4096+4096 points.
+- File `003Composite point clouds proportionally and data augmentation.py` uses FPS to sample 256*(ratio) points from the edge part from the 8192-point entity, and meanwhile to sample 256*(1-ratio) points from the non-edge part from the 8192-entity. Then, merges the two parts into a new simple point cloud with 256 points. Finally, normalizes the downsampled point cloud in scale. Please be noted that data augmentation is not required in our experiments.
 
 ### Registration 
-Non-rigid registration method coherent point drift(CPD) is used to improve the relative position of point clouds at adjacent moments.<br> 
+The Coherent Point Drift (CPD), a non-rigid registration method, is used to align two point clouds of the same plant from two adjacent moments.<br> 
 - The input of registration is downsampling results saved in folder `./data/sampled_data`. 
 - The output of registration will be saved in folder `./data/registration_result`
 - File `fish_deformable_3D_lowrank_my.py` take point cloud at time ***t-1*** and point cloud at time ***t*** as input and return the transformed point cloud at time ***t***.
@@ -57,3 +57,7 @@ Organ tracking algorithm obtains organ correspondences through bipartite matchin
 - The input is GTs in folder `./data/original_data/gt` and tracking results in folder `./data/tracking_result`.
 - Files `match.py` and `evalutaion.py` should be executed in turn to obtain quantitative metrics.
 - The output will be stored in the current folder.
+
+
+[1] Li, D., Shi, G., Li, J., Chen, Y., Zhang, S., Xiang, S., & Jin, S. (2022). PlantNet: A dual-function point cloud segmentation network for multiple plant species. ISPRS Journal of Photogrammetry and Remote Sensing, 184, 243-263.
+[2] 
