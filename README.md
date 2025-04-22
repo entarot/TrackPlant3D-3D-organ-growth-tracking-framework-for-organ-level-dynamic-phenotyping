@@ -27,11 +27,11 @@ In an experiment involving maize species, the long-term and short-term tracking 
 
 ## Quick Start
 The project contains five folders.<br>
-Folder __[data]__ contains four subfolders corresponding to the original data, sampled data, registration results and tracking results respectively. <br>
-Folder __[downsampling]__ contains code for downsampling point clouds.<br>
-Folder __[registration]__ contains code for registering point clouds.<br>
+Folder __[data]__ contains four subfolders corresponding to the original data, sampled data, registration results, and tracking results, respectively. <br>
+Folder __[downsampling]__ contains code for downsampling the original point clouds.<br>
+Folder __[registration]__ contains code for registration of point clouds.<br>
 Folder __[tracking]__ contains code for tracking plant organs.<br>
-Folder __[evaluation]__ contains code for calculating the accuracy of plant organ tracking results.<br>
+Folder __[evaluation]__ contains code for calculating the evaluation metrics of plant organ tracking results.<br>
 
 ### Downsampling  
 Downsampling the point cloud can reduce the computational burden and the time cost for registration.In downsampling process, 3D Edge‑Preserving Sampling (3DEPS) is used to downsample the point cloud.
