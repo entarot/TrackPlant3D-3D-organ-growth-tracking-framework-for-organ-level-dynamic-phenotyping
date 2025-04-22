@@ -1,8 +1,10 @@
 # TrackPlant3D: 3D organ growth tracking framework for organ-level dynamic phenotyping
 
 This repo contains the official codes for the paper:
+
 [Li, D.†](https://davidleepp.github.io/), Liu, L.†, Xu, S., & Jin, S.* (2024). TrackPlant3D: 3D organ growth tracking framework for organ-level dynamic phenotyping. <font color="#5B00AE"><i>Computers and Electronics in Agriculture</i></font>, 226, 109435.
 <ins>†</ins> *Equal contribution*<br>
+
 [[Paper](https://www.sciencedirect.com/science/article/abs/pii/S0168169924008263)]<br>
 
 ## Prerequisites
