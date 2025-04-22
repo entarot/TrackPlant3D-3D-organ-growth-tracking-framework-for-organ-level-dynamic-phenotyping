@@ -8,6 +8,8 @@ This repo contains the official codes for the paper:
 
 [[Paper](https://www.sciencedirect.com/science/article/abs/pii/S0168169924008263)]<br>
 
+[[Video presentation (12 minutes)](https://www.bilibili.com/video/BV1mKYSeZErt)]<br>
+
 ## Prerequisites
 - Python == 3.7
 - matplotlib == 3.3.4
