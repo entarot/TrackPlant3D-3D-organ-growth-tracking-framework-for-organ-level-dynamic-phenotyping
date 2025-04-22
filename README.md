@@ -42,7 +42,7 @@ Downsampling the point cloud can reduce the computational burden and the time co
 - File `003Composite point clouds proportionally and data augmentation.py` uses FPS to sample 256*(ratio) points from the edge part from the 8192-point entity, and meanwhile to sample 256*(1-ratio) points from the non-edge part from the 8192-entity. Then, merges the two parts into a new simple point cloud with 256 points. Finally, normalizes the downsampled point cloud in scale. Please be noted that data augmentation is not required in our experiments.
 
 ### Registration 
-The Coherent Point Drift (CPD) [2], a non-rigid registration method, is used to align two point clouds of the same plant from two adjacent moments.<br> 
+The Coherent Point Drift (CPD) [2], a non-rigid registration method, is used to align every two point clouds (from two adjacent moments) of the same plant.<br> 
 - The input of registration is the downsampled data saved in folder `./data/sampled_data`. 
 - The output of registration will appear in folder `./data/registration_result` after running the Registration
 - File `fish_deformable_3D_lowrank_my.py` takes the point cloud at time ***t-1*** and the point cloud at time ***t*** as dual inputs and returns the transformed point cloud at time ***t***. The CPD algorithm deformed the point cloud at time ***t*** to match the shape of the point cloud at time ***t-1***.
