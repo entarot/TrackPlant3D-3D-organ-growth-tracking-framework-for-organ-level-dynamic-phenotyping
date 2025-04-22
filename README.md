@@ -56,9 +56,9 @@ Our organ tracking algorithm obtains organ correspondences through Minimum Weigh
 - Folder `./tracking/col` stores the organ label correspondences during each tracking (from ***t-1*** to ***t***). The data is for debugging.
 
 ### Evaluation
-- The input is GTs in folder `./data/original_data/gt` and tracking results in folder `./data/tracking_result`.
-- Files `match.py` and `evalutaion.py` should be executed in turn to obtain quantitative metrics.
-- The output will be stored in the current folder.
+- The Evaluation accepts dual inputs. One is from the Ground Truth (GT) in folder `./data/original_data/gt`, which means the time-series plant point clouds with manual labels. The other is from the TrackPlant3D results in folder `./data/tracking_result`.
+- Our metrics are LTTA, STTA, and IDSR. 
+- Please run File `match.py` first and then run File `evalutaion.py`. The txt output of metrics will be stored in the same folder of the code files.
 
 
 [1] Li, D., Shi, G., Li, J., Chen, Y., Zhang, S., Xiang, S., & Jin, S. (2022). PlantNet: A dual-function point cloud segmentation network for multiple plant species. ISPRS Journal of Photogrammetry and Remote Sensing, 184, 243-263.
