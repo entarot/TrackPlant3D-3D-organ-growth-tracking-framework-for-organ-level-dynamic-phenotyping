@@ -45,15 +45,15 @@ Downsampling the point cloud can reduce the computational burden and the time co
 The Coherent Point Drift (CPD) [2], a non-rigid registration method, is used to align every two point clouds (from two adjacent moments) of the same plant.<br> 
 - The input of registration is the downsampled data saved in folder `./data/sampled_data`. 
 - The output of registration will appear in folder `./data/registration_result` after running the Registration
-- File `fish_deformable_3D_lowrank_my.py` takes the point cloud at time ***t-1*** and the point cloud at time ***t*** as dual inputs and returns the transformed point cloud at time ***t***. The CPD algorithm deformed the point cloud at time ***t*** to match the shape of the point cloud at time ***t-1***.
+- File `fish_deformable_3D_lowrank_my.py` takes the point cloud at time ***t-1*** and the point cloud at time ***t*** as dual inputs and returns the deformed point cloud at time ***t***. The CPD algorithm deformed the point cloud at time ***t*** to match the shape of the point cloud at time ***t-1***.
 
 ### Tracking 
-Our organ tracking algorithm obtains organ correspondences through Minimum Weighted Perfect Matching (MWPM) on an extended cost matrix for matching organs from two adjacent moments. <br>
-- The input of tracking is registration results at time ***t*** in folder `./data/registration_result` and the downsampled point cloud at time ***t-1*** in folder `./data/sampled_data`. 
-- The output are point clouds whose labels are upsampled to propagate to the original point clouds will be saved in `./data/tracking_result`.
-- File `organ_matching.py` estimates the organ correspondences between point cloud at time ***t-1*** and point cloud at time ***t***.
-- Folder `./tracking/cost` stores the extended cost matrix of each tracking.
-- Folder `./tracking/col` stores the organ correspondences of each tracking.
+Our organ tracking algorithm obtains organ correspondences through Minimum Weighted Perfect Matching (MWPM) on an extended cost matrix for matching organs from two adjacent moments. The algorithm estimates the organ correspondences between point cloud at time ***t-1*** and point cloud at time ***t*** <br>
+- The tracking accepts dual inputs. One is from the CPD-deformed point cloud (256 points) at time ***t*** in folder `./data/registration_result` and the other is from the 3DEPS-downsampled point cloud (256 points) at time ***t-1*** in folder `./data/sampled_data`. 
+- The output is a point cloud at time ***t*** with point-wise organ labels, and this point cloud is as dense as the original point cloud before downsampling. The result will appear in `./data/tracking_result`.
+- File `organ_matching.py` is the tracking algorithm.
+- Folder `./tracking/cost` stores the extended cost matrix during each tracking (from ***t-1*** to ***t***). The data is for debugging.
+- Folder `./tracking/col` stores the organ label correspondences during each tracking (from ***t-1*** to ***t***). The data is for debugging.
 
 ### Evaluation
 - The input is GTs in folder `./data/original_data/gt` and tracking results in folder `./data/tracking_result`.
