@@ -50,7 +50,7 @@ The Coherent Point Drift (CPD) [2], a non-rigid registration method, is used to 
 ### Tracking 
 Our organ tracking algorithm obtains organ correspondences through Minimum Weighted Perfect Matching (MWPM) on an extended cost matrix for matching organs from two adjacent moments. The algorithm estimates the organ correspondences between point cloud at time ***t-1*** and point cloud at time ***t*** <br>
 - The tracking accepts dual inputs. One is from the CPD-deformed point cloud (256 points) at time ***t*** in folder `./data/registration_result` and the other is from the 3DEPS-downsampled point cloud (256 points) at time ***t-1*** in folder `./data/sampled_data`. 
-- The output is a point cloud at time ***t*** with point-wise organ labels, and this point cloud is as dense as the original point cloud before downsampling. The result will appear in `./data/tracking_result`.
+- The output is a point cloud at time ***t*** with point-wise organ labels, and this point cloud is upsampled to as dense as the original point cloud. The result will appear in `./data/tracking_result`.
 - File `organ_matching.py` is the tracking algorithm.
 - Folder `./tracking/cost` stores the extended cost matrix during each tracking (from ***t-1*** to ***t***). The data is for debugging.
 - Folder `./tracking/col` stores the organ label correspondences during each tracking (from ***t-1*** to ***t***). The data is for debugging.
