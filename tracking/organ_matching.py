@@ -13,11 +13,12 @@ def log_string(out_str):
 
 
 if __name__ == '__main__':
-    plant_list = ['maize']
+    plant_list = ['maize','sorghum','tobacco','tomato']
+    sample_method = '3DEPS'
     base = os.path.abspath('..')
     for pid in range(len(plant_list)):
         path_raw = os.path.join(base, "data", "original_data", "raw", plant_list[pid])
-        sampled_path = os.path.join(base, "data", "sampled_data", plant_list[pid])
+        sampled_path = os.path.join(base, "data", "sampled_data", sample_method, plant_list[pid])
         path_reg = os.path.join(base, "data", "registration_result", plant_list[pid])
         save_path = os.path.join(base, "data", "tracking_result", plant_list[pid])
         col_path = os.path.join(os.getcwd(), "col")
