@@ -5,7 +5,7 @@ import time
 
 if __name__ == "__main__":
     t1 = time.time()
-    plant_list = ['maize']
+    plant_list = ['maize','sorghum','tobacco','tomato']
     base = os.getcwd()
     for pid in range(len(plant_list)):
         col_path = os.path.join(base, "col", plant_list[pid])
