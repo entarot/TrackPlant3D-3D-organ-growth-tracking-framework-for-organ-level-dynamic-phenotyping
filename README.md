@@ -57,7 +57,7 @@ Our organ tracking algorithm obtains organ correspondences through Minimum Weigh
 
 ### Evaluation
 - The Evaluation accepts dual inputs. One is from the Ground Truth (GT) in folder `./data/original_data/gt`, which means the time-series plant point clouds with manual labels. The other is from the TrackPlant3D results in folder `./data/tracking_result`.
-- Our metrics are LTTA, STTA, and IDSR. 
+- Our metrics are LTTA (Long-term Tracking Accuracy), STTA (Short-term Tracking Accuracy), and IDSR (ID Switch Rate). 
 - Please run File `match.py` first and then run File `evalutaion.py`. The txt output of metrics will be stored in the same folder of the code files.
 
 
