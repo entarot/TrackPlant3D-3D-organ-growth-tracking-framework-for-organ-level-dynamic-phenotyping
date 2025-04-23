@@ -10,12 +10,13 @@ def visualize(iteration, error, X, Y, saved_path, label):
 
 
 def main():
-    plant_list = ['maize']
+    plant_list = ['maize','sorghum','tobacco','tomato']
+    sample_method = '3DEPS'
     total_start_time = time.time()
     for pid in range(len(plant_list)):
         start_time = time.time()
         base = os.path.dirname(os.path.dirname(os.getcwd()))
-        data_path = os.path.join(base, "data", "sampled_data", plant_list[pid])
+        data_path = os.path.join(base, "data", "sampled_data", sample_method, plant_list[pid])
         save_path = os.path.join(base, "data", "registration_result", plant_list[pid])
         if not os.path.exists(save_path):
             os.mkdir(save_path)
