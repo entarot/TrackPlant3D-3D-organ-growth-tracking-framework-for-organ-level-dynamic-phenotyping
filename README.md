@@ -26,7 +26,7 @@ In an experiment involving maize species, the long-term and short-term tracking 
 
 
 ***<p align="center">Overall TrackPlant3D framework for tracking organ growth in time-series plant point clouds.<br>The framework includes three main steps—Step 1, point cloud processing; Step 2, estimating organ correspondences; and Step 3, growth tracking***<br>
-<img src="TrackPlant3D.jpg" width="100%" height="50%"><br><br>
+<img src="图1v3.jpg" width="100%" height="50%"><br><br>
 <table border="0">
   <tr>
     <td width="100%" align="center">
