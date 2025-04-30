@@ -48,8 +48,8 @@ The project contains five folders:
 - Folder **`[evaluation]`** : Contains the code for calculating the evaluation metrics of the plant organ tracking results.
 
 ### Downsampling  
-Downsampling the point cloud can reduce the computational burden and the time cost for registration.In downsampling process, 3D Edge‑Preserving Sampling (3DEPS) [1] is used to downsample the point cloud.
-- File `3DEPS(python).py` is used for downsampling. First separating the original plant point clouds into point clouds containing only edge points and point clouds containing only non-edge points, respectively. Then applying FPS to sample 4096 points from both the edge part and the non-edge part, and merge the two parts into a combined point cloud with 8192 points. Finally using FPS to sample 256*(ratio) points from the edge part and to sample 256*(1-radio) points from the non-edge part, then merges the two parts into a new single point cloud with 256 points. 
+Downsampling the point cloud can reduce the computational burden and the time cost for registration. In downsampling process, 3D Edge‑Preserving Sampling (3DEPS) [1] is used.
+- In the current version, File `3DEPS(python).py` is used for downsampling. The code first separates the original plant point clouds into point clouds containing only edge points and point clouds containing only non-edge points, respectively. Then it applies FPS to sample 4096 points from both the edge part and the non-edge part, and merge the two parts into a combined point cloud with 8192 points. Finally it uses FPS to sample 256*(ratio) points from the edge part and to sample 256*(1-radio) points from the non-edge part, then merges the two parts into a new point cloud with only 256 points. 
 - Note: The downsampled point clouds are normalized via PointNet-style preprocessing (centering + unit sphere scaling).
 
 ### Registration 
