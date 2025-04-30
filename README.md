@@ -72,10 +72,15 @@ Our organ tracking algorithm obtains organ correspondences through Minimum Weigh
 - Please run File `match.py` first and then run File `evalutaion.py`. The txt output of metrics will be stored in the same folder of the code files.
 
 ## Update histroy
-v1 2024 August
-- The Evaluation accepts dual inputs. One is from the Ground Truth (GT) in folder `./data/original_data/gt`, which means the time-series plant point clouds with manual labels. The other is from the TrackPlant3D results in folder `./data/tracking_result`.
-- Our m
 
+v1 2024 August
+- Uploaded part of the total dataset.
+- Completed the instruction for use.
+
+v2 2025 April
+- Uploaded the full dataset.
+- Improved the downsampling code; now runs purely in python.
+- An issue answered.
 
 
 [1] Li, D., Shi, G., Li, J., Chen, Y., Zhang, S., Xiang, S., & Jin, S. (2022). PlantNet: A dual-function point cloud segmentation network for multiple plant species. ISPRS Journal of Photogrammetry and Remote Sensing, 184, 243-263.
