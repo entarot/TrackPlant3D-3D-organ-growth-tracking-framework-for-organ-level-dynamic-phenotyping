@@ -53,7 +53,7 @@ Downsampling the point cloud can reduce the computational burden and the time co
 - Note: The downsampled point clouds are normalized via PointNet-style preprocessing (centering + unit sphere scaling).
 
 ## Registration 
-The Coherent Point Drift (CPD) [2], a non-rigid registration method, is used to align every two point clouds (from two adjacent moments) of the same plant.<br> 
+The Coherent Point Drift (CPD) [2], a non-rigid registration method, is used to align every pair of point clouds (from two adjacent moments) of the same plant.<br> 
 - The input of registration is the downsampled data saved in folder `./data/sampled_data`. 
 - The output of registration will appear in folder `./data/registration_result` after running the Registration
 - File `fish_deformable_3D_lowrank_my.py` takes the point cloud at time ***t-1*** and the point cloud at time ***t*** as dual inputs and returns the deformed point cloud at time ***t***. The CPD algorithm deformed the point cloud at time ***t*** to match the shape of the point cloud at time ***t-1***.
